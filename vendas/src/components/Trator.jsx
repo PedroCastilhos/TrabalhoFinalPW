@@ -18,15 +18,16 @@ function Trator() {
   }, []);
 
   const listaTratores = tratores.map((trator) => (
-    <>
+    <div className="test" key={trator.id}>
       <h1>{trator.modelo}</h1>
-      <img src={trator.foto} alt="trator1" />
-      <button onClick={() => mostraDetalhes(trator.modelo, trator.descricao)}>
-        Detalhes
-      </button>
-
-      <button>Comprar</button>
-    </>
+      <div>
+        <img src={trator.foto} alt="trator1" />
+        <button onClick={() => mostraDetalhes(trator.modelo, trator.descricao)}>
+          Detalhes
+        </button>
+        <button>Comprar</button>
+      </div>
+    </div>
   ));
 
   return (

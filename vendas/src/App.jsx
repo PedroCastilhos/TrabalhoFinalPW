@@ -9,7 +9,9 @@ function App() {
     <>
       <Nav />
       <Introducao />
+      <h1>Tratores</h1>
       <Trator />
+      <h1>Equipamentos</h1>
       <Equipamentos />
       <Footer></Footer>
     </>

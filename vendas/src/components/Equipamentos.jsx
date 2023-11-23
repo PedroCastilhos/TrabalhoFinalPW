@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { dadosEquipamentos } from '../../public/equipamentos';
 import Swal from 'sweetalert2';
+import './styles/styleEquipamentos.css';
 
-function Trator() {
+function Equipamentos() {
   const [equipamentos, setEquipamentos] = useState([]);
 
   function mostraDetalhes(modelo, descricao) {
@@ -18,25 +19,29 @@ function Trator() {
   }, []);
 
   const listaEquipamentos = equipamentos.map((equipamento) => (
-    <>
+    <div className="test" key={equipamento.id}>
       <h1>{equipamento.modelo}</h1>
-      <img src={equipamento.foto} alt="trator1" />
-      <button
-        onClick={() =>
-          mostraDetalhes(equipamento.modelo, equipamento.descricao)
-        }
-      >
-        Detalhes
-      </button>
-      <button>Comprar</button>
-    </>
+      <div>
+        <img src={equipamento.foto} alt="trator1" />
+        <div>
+          <button
+            onClick={() =>
+              mostraDetalhes(equipamento.modelo, equipamento.descricao)
+            }
+          >
+            Detalhes
+          </button>
+          <button>Comprar</button>
+        </div>
+      </div>
+    </div>
   ));
 
   return (
-    <>
+    <div>
       <div>{listaEquipamentos}</div>
-    </>
+    </div>
   );
 }
 
-export default Trator;
+export default Equipamentos;

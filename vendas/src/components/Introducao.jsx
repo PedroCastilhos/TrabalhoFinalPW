@@ -27,13 +27,7 @@ function Introducao() {
           adipisicing elit. Dolores aperiam dolorem, dolore ipsum eum aliquid
           vel illum unde modi. Culpa quisquam, molestiae vel saepe debitis
           voluptate vero nam laudantium eaque. Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Voluptates distinctio a eius quia
-          pariatur, accusamus incidunt ad aspernatur, hic magni fugiat
-          dignissimos. Similique, amet sapiente error voluptate voluptas
-          nesciunt voluptatibus. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Dolores aperiam dolorem, dolore ipsum eum aliquid
-          vel illum unde modi. Culpa quisquam, molestiae vel saepe debitis
-          voluptate vero nam laudantium eaque.
+          consectetur adipisicing elit.
         </p>
       </div>
       <div className="imgs">

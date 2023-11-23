@@ -1,0 +1,33 @@
+/* Mantenha o display flex e a direção da flexbox como row */
+.test {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-around; /* Distribui os elementos horizontalmente */
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+  width: 80%; /* Ajuste a largura para o que melhor se adapte à sua interface */
+  margin: 10px auto; /* Centraliza horizontalmente */
+  border: 1px solid #367c2b;
+}
+
+/* Estilização dos itens dentro do container .test */
+.test > div {
+  margin: 10px; /* Espaçamento entre os itens */
+  flex: 1 0 40%; /* Ajusta o tamanho dos itens para ocupar 40% da largura */
+  max-width: 300px; /* Define uma largura máxima para os itens */
+}
+
+.test h1 {
+  text-align: center; /* Centraliza o texto do modelo */
+}
+
+.test img {
+  width: 80%; /* Garante que a imagem se ajuste ao seu container */
+  height: auto;
+}
+
+.test button {
+  width: 100%; /* Botões ocupam toda a largura do container */
+}
+
+/* Test 2 - Tratores */
