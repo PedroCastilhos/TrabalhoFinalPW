@@ -25,7 +25,7 @@ export const dadosEquipamentos = [
     id: 3,
     tipo: 'Enfardadora Prismática',
     marca: 'New Holland',
-    modelos: ['328', '338', '348'],
+    modelo: 'LCB82',
     tipoEnfardadora: 'Prismática',
     preco: 55000,
     foto: './equipamento3.png',

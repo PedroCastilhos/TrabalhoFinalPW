@@ -1,0 +1,33 @@
+.container__introducao {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  padding-top: 70px;
+}
+
+.text__introducao {
+  width: 70%;
+  height: 200px;
+  text-align: justify;
+  margin-right: 30px;
+}
+
+.text__introducao > h1 {
+  color: #367c2b;
+}
+
+.text__introducao > p {
+  margin-top: 15px;
+}
+
+.imgs {
+  display: flex;
+  flex-direction: column;
+}
+
+.imgs > img {
+  width: 450px;
+  height: 300px;
+}

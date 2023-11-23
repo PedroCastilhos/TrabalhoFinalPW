@@ -2,12 +2,13 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Trator from './components/Trator';
 import Equipamentos from './components/Equipamentos';
+import Introducao from './components/Introducao';
 
 function App() {
   return (
     <>
       <Nav />
-      <img src="./home.avif" alt="" />
+      <Introducao />
       <Trator />
       <Equipamentos />
       <Footer></Footer>

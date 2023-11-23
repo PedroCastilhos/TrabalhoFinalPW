@@ -1,8 +1,17 @@
 import { useEffect, useState } from 'react';
 import { dadosTratores } from '../../public/tratores';
+import Swal from 'sweetalert2';
 
 function Trator() {
   const [tratores, setTratores] = useState([]);
+
+  function mostraDetalhes(modelo, descricao) {
+    Swal.fire({
+      title: modelo,
+      text: descricao,
+      footer: 'Você não vai se arrepender dessa compra!',
+    });
+  }
 
   useEffect(() => {
     setTratores(dadosTratores);
@@ -12,7 +21,10 @@ function Trator() {
     <>
       <h1>{trator.modelo}</h1>
       <img src={trator.foto} alt="trator1" />
-      <button>Ver mais</button>
+      <button onClick={() => mostraDetalhes(trator.modelo, trator.descricao)}>
+        Detalhes
+      </button>
+
       <button>Comprar</button>
     </>
   ));
