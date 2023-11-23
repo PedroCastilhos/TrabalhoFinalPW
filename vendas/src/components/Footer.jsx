@@ -5,7 +5,7 @@ function Footer() {
     <>
       <footer>
         <p>
-          Site criado por Augusto Rickes E Pedro Castilhos para a matéria de
+          Site criado por Augusto Rickes e Pedro Castilhos para a matéria de
           Programação Web ©️
         </p>
       </footer>
