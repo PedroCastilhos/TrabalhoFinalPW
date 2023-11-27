@@ -1,6 +1,36 @@
+import { useState } from 'react';
+import Modal from 'react-responsive-modal';
+import 'react-responsive-modal/styles.css';
 import './styles/styleNav.css';
 
 function Nav() {
+  const [itensComprados, setItensComprados] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+
+  function mostrarItensComprados() {
+    const tratoresComprados =
+      JSON.parse(localStorage.getItem('tratoresComprados')) || [];
+    setItensComprados(tratoresComprados);
+    setModalOpen(true);
+  }
+
+  function fecharModal() {
+    setModalOpen(false);
+  }
+
+  function removerItem(index) {
+    const novosItens = [...itensComprados];
+    novosItens.splice(index, 1);
+    setItensComprados(novosItens);
+    localStorage.setItem('tratoresComprados', JSON.stringify(novosItens));
+  }
+
+  function limparLocalStorage() {
+    localStorage.removeItem('tratoresComprados');
+    setItensComprados([]);
+    setModalOpen(false);
+  }
+
   return (
     <>
       <nav className="container">
@@ -15,7 +45,44 @@ function Nav() {
           <h2>
             <a href="">Equipamentos</a>
           </h2>
-          <div className="icons">
+          <button onClick={mostrarItensComprados}>Ver itens comprados</button>
+        </div>
+      </nav>
+
+      <Modal open={modalOpen} onClose={fecharModal} center>
+        <div className="itens-comprados">
+          <h2>Itens Comprados</h2>
+          <table className="table">
+            <thead>
+              <tr>
+                <th>Modelo</th>
+                <th>Descrição</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              {itensComprados.map((item, index) => (
+                <tr key={index}>
+                  <td>{item.modelo}</td>
+                  <td>{item.descricao}</td>
+                  <td>
+                    <button onClick={() => removerItem(index)}>Remover</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <button onClick={limparLocalStorage}>Limpar Itens Comprados</button>
+        </div>
+      </Modal>
+    </>
+  );
+}
+
+export default Nav;
+
+{
+  /* <div className="icons">
             <a href="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -40,11 +107,5 @@ function Nav() {
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
               </svg>
             </a>
-          </div>
-        </div>
-      </nav>
-    </>
-  );
+          </div> */
 }
-
-export default Nav;
