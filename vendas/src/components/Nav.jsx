@@ -45,13 +45,19 @@ function Nav() {
           <h2>
             <a href="">Equipamentos</a>
           </h2>
-          <button onClick={mostrarItensComprados}>Ver itens comprados</button>
+          <button
+            onClick={mostrarItensComprados}
+            className="button-37"
+            role="button"
+          >
+            Favoritos
+          </button>
         </div>
       </nav>
 
       <Modal open={modalOpen} onClose={fecharModal} center>
         <div className="itens-comprados">
-          <h2>Itens Comprados</h2>
+          <h2>Itens Favoritados</h2>
           <table className="table">
             <thead>
               <tr>
@@ -72,7 +78,7 @@ function Nav() {
               ))}
             </tbody>
           </table>
-          <button onClick={limparLocalStorage}>Limpar Itens Comprados</button>
+          <button onClick={limparLocalStorage}>Limpar Favoritos</button>
         </div>
       </Modal>
     </>

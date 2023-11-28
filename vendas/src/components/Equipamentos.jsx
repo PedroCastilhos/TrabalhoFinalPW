@@ -38,8 +38,8 @@ function Equipamentos() {
     );
 
     Swal.fire({
-      title: 'Equipamento comprado!',
-      text: `Você comprou o equipamento ${equipamento.modelo}`,
+      title: 'Equipamento Salvado!',
+      text: `Você salvou o equipamento ${equipamento.modelo}`,
       icon: 'success',
     });
   }
@@ -51,7 +51,8 @@ function Equipamentos() {
         <img src={equipamento.foto} alt="equipamento1" className="foto" />
         <div className="botoes">
           <button
-            className="btn-detalhes"
+            role="button"
+            className="btn-detalhes button-37"
             onClick={() =>
               mostraDetalhes(equipamento.modelo, equipamento.descricao)
             }
@@ -59,10 +60,10 @@ function Equipamentos() {
             Detalhes
           </button>
           <button
-            className="btn-comprar"
+            className="btn-comprar button-37"
             onClick={() => comprarEquipamento(equipamento)}
           >
-            Comprar
+            Salvar nos Favoritos
           </button>
         </div>
       </div>

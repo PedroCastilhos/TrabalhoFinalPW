@@ -24,8 +24,8 @@ function Trator() {
       JSON.stringify(tratoresComprados)
     );
     Swal.fire({
-      title: 'Trator comprado!',
-      text: `Você comprou o trator ${trator.modelo}`,
+      title: 'Trator Salvado!',
+      text: `Você salvou o trator ${trator.modelo}`,
       icon: 'success',
     });
   }
@@ -41,13 +41,16 @@ function Trator() {
         <img src={trator.foto} alt="trator1" className="foto" />
         <div className="botoes">
           <button
-            className="btn-detalhes"
+            className="btn-detalhes button-37"
             onClick={() => mostraDetalhes(trator.modelo, trator.descricao)}
           >
             Detalhes
           </button>
-          <button className="btn-comprar" onClick={() => comprarTrator(trator)}>
-            Comprar
+          <button
+            className="btn-comprar button-37"
+            onClick={() => comprarTrator(trator)}
+          >
+            Salvar nos Favoritos
           </button>
         </div>
       </div>
